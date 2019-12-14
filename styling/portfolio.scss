@@ -1,0 +1,214 @@
+@import "textstyle";
+@import "headinghighlight";
+@import "firasans-medium";
+
+body {
+    display: grid;
+    grid-template-areas: 
+    "main-nav"
+    "nav-bar"
+    "skills" 
+    "projects" 
+    "blog" 
+    "contact"
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#main-nav {
+    grid-area: main-nav;
+    grid-template-rows: auto;
+    background-color:#F0F8FF;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content:center;
+    
+    img {
+        height:100px;
+        width:100px;
+        border-radius: 50%;
+        margin-top:50px;    
+    }
+
+    #info {
+        @include fira-med;
+        border: 5px #F5A5A5 solid;
+        background-color:white;
+        margin: 20px;
+        text-align:center;
+        padding: 15px;
+    }
+}
+
+header {
+    grid-area:nav-bar; 
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: auto;
+        border: 1px solid #e7e7e7;
+        background-color: #f3f3f3;
+    }
+    li {
+        float: left;
+    }
+    li a {
+        @include fira-med;
+        display: block;
+        color: #F5A5A5 ;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    li a:hover {
+        background-color:white;
+    }
+}
+
+#skills {
+    grid-area:skills;
+    display: grid;
+    padding: 10px;
+       
+    #logos {
+        height:100px;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content: space-around;
+        img:hover {
+            height:70px;
+            width:70px;      
+        }
+    }
+}
+
+h1, h2 {
+    @include heading-style();
+    @include highlight();   
+}
+
+
+h3, h4 {
+    @include heading-style();
+}
+
+#projects {
+    grid-area: projects;
+    display: grid;
+    background-color: #F0F8FF;
+    // Begin top-left corner (starting point) coordinates X:0 Y:0
+    // Distance away from starting point to right-top corner increased X:100% with Y:6% incline
+    // Moving down bottom-right corner X:100% axis comes down at Y:96% incline 
+    // Returning to bottom-left corner X:0 Y:100%
+    clip-path: polygon(0 0%, 100% 6%, 100% 94%, 0% 100%);
+    padding: 20px;
+
+    div {
+        img {
+            padding: 20px;
+            height:200px;
+            width:300px; 
+        }
+        a {
+            cursor:pointer;   
+            @include fira-med;
+            color: #F5A5A5 ;
+            text-decoration: none;
+        }
+    }
+}
+
+#blog {
+    grid-area: blog;
+    display:grid;
+    padding-bottom:50px;
+}
+
+#contact {
+    grid-area: contact;
+    display:grid;
+    background-color: #F0F8FF;
+    
+    input[type=text] {
+        width:100%;
+        height: 30px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 2px #e7e7e7 solid;
+        border-radius: 4px;
+    }
+    
+    #enquiries {
+        width:100%;
+        height: 100px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 2px #e7e7e7 solid;
+        border-radius: 4px;
+    }
+
+    input[type=submit] {
+        @include fira-med;
+        background-color:#f3f3f3;
+        color:#f5a5a5;
+        padding: 12px 20px;
+        border-radius:4px;
+        float:right;
+    }
+}
+
+footer {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:flex-start;
+    
+    img {
+        height:30px;
+        width:30px;
+        margin:10px 20px;
+    }
+}
+
+@media screen and (min-width:768px){ 
+    #main-nav {
+        #dp {
+        height:250px;
+        width:240px;        
+        } 
+    }
+
+    #projects {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+        img {
+            height:180px;
+            width:240px;
+        }
+    }
+
+    #blog {
+        img {
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom:30px;
+        }
+    }
+
+    #form-container{
+        display:block;
+        text-align:center;
+    }
+
+    form {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    }
+}
+

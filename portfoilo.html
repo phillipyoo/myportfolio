@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./styling/portfolio.css">
+    <link rel="import" href="./skills.html">
+    <link rel="import" href="./projects.html">
+    <link rel="import" href="./blog.html">
+    <link rel="import" href="./contact.html">
+    <title>Web Portfolio</title>
+</head>
+<body>
+    <div id="main-nav">
+        <img src="./images/image.JPG" id="dp">
+        <div id=info>
+            <h1><strong>Phillip Yoo</strong></h1><br><br>
+            <h2>Student developer</h2>
+                <p>Currently a student enrolled in a web development program at Coder Academy Brisbane<br><br>
+                I have aspirations to become a front-end web developer/user interface designer <br><br>
+                Eager to learn more front-end programming languages such as Javascript and React
+                and improve skills in HTML and CSS<br><br>
+                Feel free to contact me via email: phillipdongyoo@gmail.com
+                </p>
+        </div>
+    </div>
+    
+    <header id="nav-bar">
+        <ul>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+
+    <div id="skills">
+    </div>
+        
+    <div id="projects">
+    </div>
+
+    <div id="blog">
+    </div>
+
+    <div id="contact">
+    </div>
+
+    <footer>
+        <a href="https://www.facebook.com/phillip.yoo.93"><img src="./images/facebook.png"></a>
+        <a href="https://www.instagram.com/philyxx93/"><img src="./images/instagram.png">
+        <a href="https://www.linkedin.com/in/phillip-yoo-b60a72142/"><img src="./images/linkedin.png"></a>
+        <a href="https://github.com/phillipyoo"><img src="./images/github-logo-silhouette-in-a-square.png">
+    </footer>
+    
+    <script>
+        // finding all the content in the linked document
+        let skills = document.querySelector('link[href="./skills.html"]').import 
+        // extracting the 'body' from skills
+        let importedSkills = skills.querySelector('body')
+        //finding where the content should go
+        let skillsLocation = document.querySelector('#skills')
+        // appending the content onto its desired location
+        skillsLocation.appendChild(importedSkills.cloneNode(true))
+
+    
+        let projects = document.querySelector('link[href="./projects.html"]').import
+        let importedprojects= projects.querySelector('div')
+        let projectsLocation = document.querySelector('#projects')
+        projectsLocation.appendChild(importedprojects.cloneNode(true))
+
+        let blog = document.querySelector('link[href="./blog.html"]').import
+        let importedblog= blog.querySelector('body')
+        let blogLocation = document.querySelector('#blog')
+        blogLocation.appendChild(importedblog.cloneNode(true))
+
+        let contact = document.querySelector('link[href="./contact.html"]').import
+        let importedcontact= contact.querySelector('body')
+        let contactLocation = document.querySelector('#contact')
+        contactLocation.appendChild(importedcontact.cloneNode(true))
+
+    </script>
+</body>
+</html>

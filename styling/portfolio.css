@@ -31,8 +31,8 @@ html {
 }
 
 #main-nav img {
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
   border-radius: 50%;
   margin-top: 50px;
 }
@@ -130,32 +130,83 @@ h3, h4 {
   grid-area: projects;
   display: -ms-grid;
   display: grid;
+  -ms-grid-rows: (3fr)[1];
+      grid-template-rows: repeat(1, 3fr);
+      grid-template-areas: "a" "b" "c";
   background-color: #F0F8FF;
+  padding: 50px;
   -webkit-clip-path: polygon(0 0%, 100% 6%, 100% 94%, 0% 100%);
           clip-path: polygon(0 0%, 100% 6%, 100% 94%, 0% 100%);
-  padding: 20px;
 }
 
-#projects div img {
-  padding: 20px;
+#projects img {
   height: 200px;
   width: 300px;
 }
 
-#projects div a {
-  cursor: pointer;
+#projects .overlay {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  width: 100%;
+  height: 50px;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+#projects .text {
   font-family: 'Fira Sans', sans-serif;
   font-size: medium;
-  color: #F5A5A5;
-  text-decoration: none;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#projects #item1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: a;
+  position: relative;
+  width: auto;
+}
+
+#projects #item1:hover .overlay {
+  height: 100%;
+}
+
+#projects #item2 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: b;
+  position: relative;
+  width: auto;
+}
+
+#projects #item2:hover .overlay {
+  height: 100%;
+}
+
+#projects #item3 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: c;
+  position: relative;
+  width: auto;
+}
+
+#projects #item3:hover .overlay {
+  height: 100%;
 }
 
 #blog {
   -ms-grid-row: 5;
   -ms-grid-column: 1;
   grid-area: blog;
-  display: -ms-grid;
-  display: grid;
+  margin: auto;
   padding-bottom: 50px;
 }
 
@@ -198,6 +249,10 @@ h3, h4 {
   float: right;
 }
 
+#contact input:hover {
+  background-color: white;
+}
+
 footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -226,17 +281,24 @@ footer img:hover {
     width: 240px;
   }
   #projects {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    grid-area: projects;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "a b c";
   }
   #projects img {
-    height: 180px;
-    width: 240px;
+    height: 240px;
+    width: 300px;
   }
   #blog img {
     margin-left: auto;

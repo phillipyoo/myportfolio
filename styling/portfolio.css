@@ -30,6 +30,31 @@ html {
           justify-content: center;
 }
 
+#main-nav .fade {
+  -webkit-animation: fadein 4s;
+          animation: fadein 4s;
+  display: block;
+  margin: 25px auto;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 #main-nav img {
   height: 200px;
   width: 200px;

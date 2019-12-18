@@ -130,9 +130,6 @@ h3, h4 {
   grid-area: projects;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (3fr)[1];
-      grid-template-rows: repeat(1, 3fr);
-      grid-template-areas: "a" "b" "c";
   background-color: #F0F8FF;
   padding: 50px;
   -webkit-clip-path: polygon(0 0%, 100% 6%, 100% 94%, 0% 100%);
@@ -167,9 +164,6 @@ h3, h4 {
 }
 
 #projects #item1 {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: a;
   position: relative;
   width: auto;
 }
@@ -179,9 +173,6 @@ h3, h4 {
 }
 
 #projects #item2 {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: b;
   position: relative;
   width: auto;
 }
@@ -191,9 +182,6 @@ h3, h4 {
 }
 
 #projects #item3 {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  grid-area: c;
   position: relative;
   width: auto;
 }
@@ -292,13 +280,10 @@ footer img:hover {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-areas: "a b c";
   }
   #projects img {
-    height: 240px;
-    width: 300px;
+    height: 300px;
+    width: 400px;
   }
   #blog img {
     margin-left: auto;

@@ -41,6 +41,7 @@
 
 3. Slide animation box
     <p> Created a sliding overlay effect to each project image when pointer is hovered on a particular image. The overlay includes some text descriptions including the name of the project and the type of work achieved.
+
     ![](./images/hover.gif)
 
 4. Blog

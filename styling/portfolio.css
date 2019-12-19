@@ -163,8 +163,8 @@ h5 {
 }
 
 #projects img {
-  height: 200px;
-  width: 300px;
+  height: 280px;
+  width: 350px;
 }
 
 #projects .overlay {
@@ -296,7 +296,7 @@ footer img:hover {
   }
   #projects img {
     height: 300px;
-    width: 400px;
+    width: 380px;
   }
   #blog img {
     margin-left: auto;

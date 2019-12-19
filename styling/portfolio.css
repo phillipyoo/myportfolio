@@ -25,16 +25,11 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 #main-nav .fade {
   -webkit-animation: fadein 4s;
           animation: fadein 4s;
-  display: block;
-  margin: 25px auto;
 }
 
 @-webkit-keyframes fadein {
@@ -72,6 +67,10 @@ html {
   padding: 15px;
 }
 
+#main-nav #info a {
+  color: black;
+}
+
 header {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
@@ -97,7 +96,7 @@ header li a {
   display: block;
   color: #F5A5A5;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 20px;
   text-decoration: none;
 }
 
@@ -111,7 +110,6 @@ header li a:hover {
   grid-area: skills;
   display: -ms-grid;
   display: grid;
-  padding: 10px;
 }
 
 #skills #logos {
@@ -119,8 +117,6 @@ header li a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
@@ -147,6 +143,11 @@ h3, h4 {
   font-style: italic;
   text-align: center;
   font-size: 1.5em;
+}
+
+h5 {
+  font-size: large;
+  font-style: italic;
 }
 
 #projects {
@@ -180,38 +181,25 @@ h3, h4 {
 #projects .text {
   font-family: 'Fira Sans', sans-serif;
   font-size: medium;
-  position: absolute;
-  top: 40%;
+  position: relative;
+  top: 30%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   text-align: center;
 }
 
-#projects #item1 {
+#projects .text a {
+  color: black;
+  top: 100px;
+}
+
+#projects .item {
   position: relative;
   width: auto;
 }
 
-#projects #item1:hover .overlay {
-  height: 100%;
-}
-
-#projects #item2 {
-  position: relative;
-  width: auto;
-}
-
-#projects #item2:hover .overlay {
-  height: 100%;
-}
-
-#projects #item3 {
-  position: relative;
-  width: auto;
-}
-
-#projects #item3:hover .overlay {
+#projects .item:hover .overlay {
   height: 100%;
 }
 

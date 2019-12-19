@@ -2,6 +2,7 @@
 @import "headinghighlight";
 @import "firasans-medium";
 
+// grid divided into 6 grid rows
 body {
     display: grid;
     grid-template-areas: 
@@ -13,6 +14,7 @@ body {
     "contact"
 }
 
+// property sets the behaviour for a scrolling box when scrolling is triggered
 html {
     scroll-behavior: smooth;
 }
@@ -24,12 +26,10 @@ html {
     display:flex;
     align-items: center;
     flex-direction: column;
-    justify-content:center;
 
+//display picture image fade-in
     .fade {
         animation: fadein 4s;
-        display: block;
-        margin: 25px auto;
     }
     @keyframes fadein {
         from { opacity: 0; }
@@ -50,6 +50,9 @@ html {
         margin: 20px;
         text-align:center;
         padding: 15px;
+        a {
+            color:black;
+        }
     }
 }
 
@@ -71,23 +74,20 @@ header {
         display: block;
         color: #F5A5A5 ;
         text-align: center;
-        padding: 14px 16px;
+        padding: 14px 20px;
         text-decoration: none;
     }
     li a:hover {
         background-color:white;
     }
 }
-
 #skills {
     grid-area:skills;
     display: grid;
-    padding: 10px;
        
     #logos {
         height:100px;
         display:flex;
-        flex-wrap:wrap;
         justify-content: space-around;
         img:hover {
             height:70px;
@@ -95,16 +95,22 @@ header {
         }
     }
 }
-
 h1, h2 {
     @include heading-style();
     @include highlight();   
 }
-
 h3, h4 {
     @include heading-style();
 }
+h5 {
+    font-size:large;
+    font-style:italic;
+}
 
+// Polygon clip path begins from top-left corner
+// Top-left to top-right corner x-axis is at 100% width of the grid container and a 6% incline in Y-axis
+// Top-right to bottom-right corner still at X:100% and 96% incline in Y-axis
+// Bottom-right to bottom-left corner X-axis is Y:0 and the y-axis is at 100% height of the grid container
 #projects {
     grid-area: projects;
     display: grid;        
@@ -128,43 +134,33 @@ h3, h4 {
     }
     .text {
         @include fira-med;
-        position: absolute;
-        top: 40%;
+        position: relative;
+        top: 30%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
+        a {
+            color:black;
+            top:100px;
+        }
     }
 
-    #item1 {
+    .item {
         position: relative;
         width: auto;
+        &:hover .overlay {
+            height: 100%;
         }
-    #item1:hover .overlay {
-        height: 100%;
-    }
-    
-    #item2 {
-        position: relative;
-        width: auto;
-    }
-    #item2:hover .overlay {
-        height: 100%;
-    }
-    
-    #item3 {
-        position: relative;
-        width: auto;
-    }
-    #item3:hover .overlay {
-        height: 100%;
     }
 }
 
+//external page linked to blog image
 #blog {
     grid-area: blog;
     margin:auto;
     padding-bottom: 50px;
     }
+
 
 #contact {
     grid-area: contact;
@@ -189,6 +185,7 @@ h3, h4 {
         border-radius: 4px;
     }
 
+//Currently submit button has no function
     input[type=submit] {
         @include fira-med;
         background-color:#f3f3f3;

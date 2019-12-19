@@ -5,6 +5,8 @@
 
 ![](./images/homepage.png)
 
+
+
 ### Setup
 1. Clone or fork this repository
 2. Install required independacies from your terminal by running `npm install`.
@@ -24,7 +26,7 @@
 ## Main Components 
 
 1. Navigation bar 
-    <p> The bar visibily outlines the sections that are available for users to click onto.
+    <p> The bar visibly outlines the sections that are available for users to click onto.
 2. Smooth scroll-down
     <p> To improve user expererience a smooth scroll-down was implemented.
 ```
@@ -35,6 +37,8 @@
 ```
 3. Slide animation box
     <p> Created a sliding overlay effect to each project image when pointer is hovered on a particular image. The overlay includes some text descriptions including the name of the project and the type of work achieved.
+
+    ![](./images/hover.gif)
  
 4. Contact form
     <p> Contact form takes name, email and enquiries of inquirer or user.
